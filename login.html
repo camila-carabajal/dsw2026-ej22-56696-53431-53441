@@ -9,17 +9,55 @@
 
   <script src="login.js"></script>
 </head>
-<body>
+
+<body class="login-body">
+
   <div class="login-container">
-    <form>
-      <label for="username">Usuario:</label>
-      <input type="text" id="username" name="username" required>
-      <br>
-      <label for="password">Contraseña:</label>
-      <input type="password" id="password" name="password" required>
-      <br>
-      <button type="submit">Iniciar Sesión</button>
-    </form>
-  </div>
+    <header class="login-brand">
+      <div class="brand-shield" aria-hidden="true"></div>
+      <h1 class="brand-name">MedPortal</h1>
+    </header>
+
+    <section class="login-card" aria-labelledby="login-heading">
+      <header class="card-header">
+        <h2 id="login-heading" class="card-title">Bienvenido de nuevo</h2>
+        <p class="card-subtitle">Por favor, autentíquese para acceder al portal de proveedores.</p>
+      </header>
+
+    <form id="login-form">
+      <div class="form-group">
+          <label for="username" class="form-label">Nombre de usuario</label>
+          <div class="input-wrapper">
+            <input type="text" id="username" name="username" class="form-control" placeholder="Ingrese ID de admin"
+              required autocomplete="username">
+          </div>
+        </div>
+
+       <div class="form-group">
+          <label for="password" class="form-label">Contraseña</label>
+          <div class="input-wrapper">
+            <input type="password" id="password" name="password" class="form-control" placeholder="••••••••" required
+              autocomplete="current-password">
+            <button type="button" id="toggle-password" class="password-toggle-btn"
+              aria-label="Mostrar u ocultar contraseña">
+              Ver
+            </button>
+          </div>
+        </div>
+
+        <div id="login-error" class="login-alert" role="alert" aria-live="polite" hidden></div>
+        <button type="submit" class="btn btn-primary btn-submit">
+          <span>Iniciar Sesión</span>
+        </button>
+      </form>
+      <aside class="security-notice" role="note" aria-label="Aviso de seguridad">
+        <p class="notice-text">
+          <strong>Solo Acceso Seguro:</strong> Este sistema es para personal médico autorizado. Los intentos de acceso
+          no autorizados son registrados y monitoreados para su cumplimiento.
+        </p>
+      </aside>
+    </section>
+  </main>
+
 </body>
 </html>
