@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Directorio de Especialidades</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dashboard_style.css">
+  <link rel="stylesheet" href="crear-especialidad.css">
+  <script src="especialidades.js" defer></script>
+  <script src="dashboard.js" defer></script>
+  <script src="especialidades-listado.js" defer></script>
+</head>
+<body>
+  <div class="dashboard-container">
+    <header>
+      <span>Gestor de turnos</span>
+      <div>
+        <button class="menu">&#9776;</button>
+        <button id="logout">Cerrar Sesión</button>
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="dashboard.html">Panel</a></li>
+        <li><a href="especialidades.html">Especialidades</a></li>
+      </ul>
+    </nav>
+    <main class="crear-especialidad">
+      <h1>Directorio de Especialidades</h1>
+      <p class="subtitulo">
+        Administre las categorías médicas y servicios especializados del centro.
+      </p>
+
+      <!-- Barra de acciones: Buscador y Botón para Nueva Especialidad -->
+      <div class="tarjeta-form" style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <div style="display: flex; gap: 0.5rem; flex: 1; max-width: 400px;">
+          <input type="text" id="input-buscar" placeholder="Buscar por nombre o descripción..." style="flex: 1; padding: 0.6rem; border: 1px solid #dde3ec; border-radius: 6px;">
+          <button type="button" id="btn-buscar" class="boton-secundario">Buscar</button>
+        </div>
+        <div>
+          <a href="crear-especialidad.html" class="boton-primario">+ Nueva Especialidad</a>
+        </div>
+      </div>
+
+      <!-- Tabla de Listado -->
+      <div class="tarjeta-form" style="max-width: 100%; overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; text-align: left;">
+          <thead>
+            <tr style="border-bottom: 2px solid #dde3ec;">
+              <th style="padding: 0.75rem;">Nombre</th>
+              <th style="padding: 0.75rem;">Descripción</th>
+              <th style="padding: 0.75rem;">Estado</th>
+              <th style="padding: 0.75rem; text-align: right;">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-especialidades-body">
+            <!-- Se llena dinámicamente con JS -->
+          </tbody>
+        </table>
+        <p id="mensaje-vacio" class="error" style="display: none; margin-top: 1rem; text-align: center;">No se encontraron especialidades registradas.</p>
+      </div>
+    </main>
+    <footer>Mi Aplicación &copy; 2026</footer>
+  </div>
+</body>
+</html>
