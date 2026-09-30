@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nueva Especialidad</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dashboard_style.css">
+  <link rel="stylesheet" href="crear-especialidad.css">
+  <script src="especialidades.js" defer></script>
+  <script src="dashboard.js" defer></script>
+  <script src="crear-especialidad.js" defer></script>
+</head>
+<body>
+  <div class="dashboard-container">
+    <header>
+      <span>Gestor de turnos</span>
+      <div>
+        <button class="menu">&#9776;</button>
+        <button id="logout">Cerrar Sesión</button>
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="dashboard.html">Panel</a></li>
+        <li><a href="especialidades.html">Especialidades</a></li>
+      </ul>
+    </nav>
+    <main class="crear-especialidad">
+      <p class="breadcrumb">
+        <a href="especialidades.html">Especialidades</a> › Agregar Nueva Especialidad
+      </p>
+      <h1>Registrar Nueva Especialidad</h1>
+      <p class="subtitulo">
+        Complete la información técnica y administrativa para dar de alta una especialidad médica en el sistema hospitalario.
+      </p>
+
+      <form id="form-especialidad" class="tarjeta-form" novalidate>
+        <div class="campo">
+          <label for="nombre">Nombre de la Especialidad</label>
+          <input type="text" id="nombre" placeholder="Ej. Cardiología Intervencionista">
+          <p class="error" id="error-nombre"></p>
+        </div>
+
+        <div class="campo">
+          <label for="descripcion">Descripción</label>
+          <textarea id="descripcion" rows="5"
+            placeholder="Detalle el alcance de la especialidad, procedimientos principales y requisitos de derivación..."></textarea>
+          <p class="error" id="error-descripcion"></p>
+        </div>
+
+        <div class="campo">
+          <label for="estado">Estado inicial</label>
+          <select id="estado">
+            <option value="activo">Activo – Disponible para programación</option>
+            <option value="inactivo">Inactivo – No disponible para programación</option>
+          </select>
+        </div>
+
+        <p class="mensaje-exito" id="mensaje-exito" role="status"></p>
+
+        <div class="acciones">
+          <a href="especialidades.html" class="boton-secundario">Cancelar</a>
+          <button type="submit" class="boton-primario" id="boton-guardar">Guardar Especialidad</button>
+        </div>
+      </form>
+    </main>
+    <footer>Mi Aplicación &copy; 2026</footer>
+  </div>
+</body>
+</html>

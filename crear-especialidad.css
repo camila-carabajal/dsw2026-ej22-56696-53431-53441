@@ -1,0 +1,121 @@
+.crear-especialidad {
+  background-color: #f4f7fb;
+  color: #1f2a37;
+}
+
+.crear-especialidad .breadcrumb {
+  font-size: 0.85em;
+  color: #6b7a90;
+  margin: 0 0 0.5rem;
+}
+
+.crear-especialidad .breadcrumb a {
+  color: #6b7a90;
+  text-decoration: none;
+}
+
+.crear-especialidad h1 {
+  font-size: 1.3em;
+  color: #0f3d6e;
+  margin: 0;
+}
+
+.crear-especialidad .subtitulo {
+  font-size: 0.9em;
+  color: #6b7a90;
+  margin: 0.25rem 0 1.5rem;
+}
+
+.tarjeta-form {
+  background-color: white;
+  border: 1px solid #dde3ec;
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 800px;
+}
+
+.campo {
+  margin-bottom: 1.25rem;
+}
+
+.campo label {
+  display: block;
+  font-size: 0.9em;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.campo input,
+.campo textarea,
+.campo select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #dde3ec;
+  border-radius: 6px;
+  font: inherit;
+  background-color: white;
+}
+
+.campo textarea {
+  resize: vertical;
+}
+
+.campo .invalido {
+  border-color: #c62828;
+}
+
+.error {
+  color: #c62828;
+  font-size: 0.8em;
+  margin: 0.3rem 0 0;
+}
+
+.mensaje-exito {
+  color: #1b7a43;
+  font-weight: 600;
+}
+
+.acciones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.boton-primario,
+.boton-secundario {
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 0.9em;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.boton-primario {
+  background-color: #0f3d6e;
+  color: white;
+  border: 1px solid #0f3d6e;
+}
+
+.boton-primario:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.boton-secundario {
+  background-color: white;
+  color: #0f3d6e;
+  border: 1px solid #0f3d6e;
+}
+
+@media screen and (max-width: 599px) {
+  .acciones {
+    flex-direction: column-reverse;
+  }
+
+  .boton-primario,
+  .boton-secundario {
+    text-align: center;
+  }
+}
