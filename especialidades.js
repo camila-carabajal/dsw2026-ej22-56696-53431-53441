@@ -1,5 +1,9 @@
 const CLAVE_ESPECIALIDADES = "especialidades";
 
+function normalizar(texto) {
+    return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim().toLowerCase();
+}
+
 const ESPECIALIDADES_INICIALES = [
     { id: "1", nombre: "Cardiología", descripcion: "Estudio y tratamiento de trastornos del corazón y del sistema circulatorio.", activo: true },
     { id: "2", nombre: "Neurología", descripcion: "Diagnóstico y tratamiento de las afecciones del sistema nervioso.", activo: true },
@@ -39,19 +43,19 @@ function agregarEspecialidad(esp) {
 
 function buscarEspecialidades(texto) {
     const especialidades = obtenerEspecialidades();
-    const busqueda = texto.trim().toLowerCase();
+    const busqueda = normalizar(texto);
 
     if (busqueda === "") {
         return especialidades;
     }
 
     return especialidades.filter(esp =>
-        esp.nombre.toLowerCase().includes(busqueda) ||
-        esp.descripcion.toLowerCase().includes(busqueda)
+        normalizar(esp.nombre).includes(busqueda) ||
+        normalizar(esp.descripcion).includes(busqueda)
     );
 }
 
 function existeEspecialidad(nombre) {
-    const buscado = nombre.trim().toLowerCase();
-    return obtenerEspecialidades().some(esp => esp.nombre.toLowerCase() === buscado);
+    const buscado = normalizar(nombre);
+    return obtenerEspecialidades().some(esp => normalizar(esp.nombre) === buscado);
 }
