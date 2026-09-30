@@ -1,82 +1,40 @@
-.dashboard-container {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas: 
-    "header"
-    "main"
-    "footer";
-  height: 100dvh;
-}
-
-.dashboard-container nav {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 200px;
-  background-color: #f4f4f4;
-  left: -200px;
-}
-
-.dashboard-container nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.dashboard-container nav ul li {
-  padding: 1rem;
-  border-bottom: 1px solid #ddd;
-}
-
-.dashboard-container header {
-  grid-area: header;
-  height: 50px;
-  background-color: #333;
-  color: white;
+/* TABLA Y CONTENIDO*/
+.doctor-cell {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 1rem;
+  gap: 0.75rem;
 }
 
-.dashboard-container header div {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+.table-responsive .user-avatar {
+  width: 36px;
+  height: 36px;
+  font-size: 0.85rem;
+  flex-shrink: 0;
 }
 
-.dashboard-container main {
-  grid-area: main;
-  padding: 1rem;
-  overflow-y: auto;
+.avatar-wilson {
+  background-color: #e0e7ff;
+  color: #3730a3;
 }
 
-.dashboard-container footer {
-  grid-area: footer;
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 1rem;
+.avatar-rodriguez {
+  background-color: #dbeafe;
+  color: #1e40af;
 }
 
-@media screen and (min-width: 600px) {
-  .dashboard-container {
-    grid-template-columns: 200px 1fr;
-    grid-template-areas: 
-      "header header"
-      "nav main"
-      "footer footer";
-  }
+.avatar-chen {
+  background-color: #fef3c7;
+  color: #92400e;
+}
 
-  .dashboard-container nav {
-    grid-area: nav;
-    position: static;
-    left: 0;
-    height: auto;
-  }
+.data-table td .btn-icon {
+  margin-left: 0.25rem;
+}
 
-  .dashboard-container header div .menu {
-    display: none;
+@media screen and (max-width: 768px) {
+  .table-footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 }
