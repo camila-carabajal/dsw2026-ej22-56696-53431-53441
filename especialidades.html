@@ -9,24 +9,80 @@
   <link rel="stylesheet" href="crear-especialidad.css">
   <script src="especialidades.js" defer></script>
   <script src="dashboard.js" defer></script>
-  <script src="especialidades-listado.js" defer></script>
+  <script src="especialidades_listado.js" defer></script>
 </head>
 <body>
-  <div class="dashboard-container">
-    <header>
-      <span>Gestor de turnos</span>
-      <div>
-        <button class="menu">&#9776;</button>
-        <button id="logout">Cerrar Sesión</button>
+  <header class="mobile-header">
+    <div class="mobile-brand">
+      <span>MedPortal</span>
+    </div>
+    <button id="menu-btn" class="mobile-menu-btn menu" aria-label="Abrir o cerrar menú de navegación">&#9776;</button>
+  </header>
+
+  <div id="sidebar-backdrop" class="sidebar-backdrop" aria-hidden="true"></div>
+
+  <div class="app-container dashboard-container">
+    <aside id="sidebar" class="sidebar" aria-label="Navegación lateral">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <div class="brand-text">
+            <span class="brand-title">Admin Portal</span>
+            <span class="brand-subtitle">Healthcare Management</span>
+          </div>
+        </div>
       </div>
-    </header>
-    <nav>
-      <ul>
-        <li><a href="dashboard.html">Panel</a></li>
-        <li><a href="especialidades.html">Especialidades</a></li>
-      </ul>
-    </nav>
-    <main class="crear-especialidad">
+
+      <nav class="sidebar-nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link">
+              <span>Panel</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#doctores" class="nav-link">
+              <span>Doctores</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="especialidades.html" class="nav-link active" aria-current="page">
+              <span>Especialidades</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#pacientes" class="nav-link">
+              <span>Búsqueda de Pacientes</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#configuracion" class="nav-link">
+              <span>Configuración</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <button id="logout" class="nav-link btn-logout">
+              <span>Cerrar Sesión</span>
+            </button>
+          </li>
+        </ul>
+
+        <div class="user-profile">
+          <div class="user-avatar" aria-hidden="true">AU</div>
+          <div class="user-info">
+            <span class="user-name">Admin User</span>
+            <span class="user-role">Administradora Jefe</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="main-wrapper">
+      <main class="main-content crear-especialidad">
       <h1>Directorio de Especialidades</h1>
       <p class="subtitulo">
         Administre las categorías médicas y servicios especializados del centro.
@@ -60,8 +116,8 @@
         </table>
         <p id="mensaje-vacio" class="error" style="display: none; margin-top: 1rem; text-align: center;">No se encontraron especialidades registradas.</p>
       </div>
-    </main>
-    <footer>Mi Aplicación &copy; 2026</footer>
+      </main>
+    </div>
   </div>
 </body>
 </html>
